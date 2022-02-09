@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const ToDoList = () => {
-    const [text, setText] = useState('');
+    const [text, setText] = useState(''); // text에 텍스트 저장, setText는 변경할 내용 저장
     const [list, setList] = useState([]);
     const [select, setSelect] = useState('');
 
