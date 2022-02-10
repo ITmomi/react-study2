@@ -1,34 +1,46 @@
 import React, {useState} from 'react';
+import Logo from "/react-study/src/logo.svg";
 
 
 export default function CodingApple () {
 
-   let posts = "수원 갈비 맛집"
-   let style = { color : "blue", fontsize : "30px" }
+   let posts = "ADC Meas."
+   let style = { color : "white", fontsize : "30px" }
     function sum () {
         return 100
     };
 
-    let [글제목, 글제목변경] = useState ("남자 코트 추천","여자 코트 추천");
+    let [Map, Mapsetting] = useState (["Map","Variation","Reproducibility","ANOVA"]);
 
     return (
     <>
         <div className = "black-nav">
-        <div style = {style}>개발 Blog</div>
+        <div style = {style}>ADC Analysis</div>
         </div>
         <h4> {posts} </h4>
         <h4> {sum()} </h4>
         <div className = "list">
-            <h3> {글제목[0]} </h3>
-            <p>2월 17일 발행</p>
+            <h3> {Map[0]} </h3>
+            <p>Setting</p>
             <hr/>
         </div>
-                <div className = "list">
-                    <h3> {글제목[0]} </h3>
-                    <p>2월 17일 발행</p>
-                    <hr/>
-                </div>
+        <div className = "list">
+            <h3> {Map[1]} </h3>
+            <p>Setting</p>
+            <hr/>
+        </div>
+        <div className = "list">
+            <h3> {Map[2]} </h3>
+            <p>Setting</p>
+            <hr/>
+        </div>
+        <div className = "list">
+            <h3> {Map[3]} </h3>
+            <p>Setting</p>
+            <hr/>
+        </div>
 
+        <img src={Logo} />
     </>
     );
 

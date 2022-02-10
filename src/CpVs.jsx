@@ -6,7 +6,7 @@ const CpVs = () => { // React는 맨 앞글자는 대문자로 시작해야 된�
     const [select, setSelect] = useState('');
 
     const addList  = () => {
-        if (list.some((item) => item === text)) { // 입력한 text가 배열에 있는 값과 같은지 확인
+        if (list.includes(text)) { // 입력한 text가 배열에 있는 값과 같은지 확인
             alert("같은 이름이 존재 합니다!");
 //             setText(addList === 'black' ? 'sliver' : 'black');
         } else if (text == "") { // input을 입력하지 않는 경우
