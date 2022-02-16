@@ -6,10 +6,10 @@ import React from "react";
 //import Top from "./Component/Top";
 //import Body from "./Component/Body";
 //import State from "./Component/State";
-//import Main from "./Analysis/Main";
+import Main from "./Analysis/Main";
 //import SelectSource from "./Analysis/SelectSource";
-import CodingApple from "./CodingApple/CodingApple";
-import './CodingApple/CodingApple.css';
+// import CodingApple from "./CodingApple/CodingApple";
+// import './CodingApple/CodingApple.css';
 
 
 
@@ -19,7 +19,7 @@ import './CodingApple/CodingApple.css';
 function App() {
   return (
     <div className="App">
-        <CodingApple />
+        <Main />
     </div>
   );
 }

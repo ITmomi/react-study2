@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Logo from "/react-study/src/logo.svg";
 
 
@@ -8,9 +8,9 @@ export default function CodingApple () {
    let style = { color : "white", fontsize : "30px" }
     function sum () {
         return 100
-    };
+    }
 
-    let [Map, Mapsetting] = useState (["Map","Variation","Reproducibility","ANOVA"]);
+    const Map = ["Map","Variation","Reproducibility","ANOVA"];
 
     return (
     <>
@@ -40,7 +40,7 @@ export default function CodingApple () {
             <hr/>
         </div>
 
-        <img src={Logo} />
+        <img src={Logo} alt="test" />
     </>
     );
 
