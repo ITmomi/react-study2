@@ -95,7 +95,6 @@ module.exports = (env, arg) => {
       contentBase: BUILD_PATH,
       inline: true,
       hot: true,
-      historyApiFallback: true,
       port: 3000,
     },
     plugins: [
