@@ -86,6 +86,7 @@ export const secondBoxSource = css`
     }
  `;
 export const secondBoxTarget = css`
+    
     padding: 2rem;
     margin-left: 200px;
     margin-right: 200px;
@@ -96,14 +97,6 @@ export const secondBoxTarget = css`
     }
  `;
 
-export const AccordionBox = css`
-    width: 1797px;
-    height: 500px;
-    background: white;
-    margin-top: 25px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    `;
 export const resultBox = css`
     width: 1797px;
     height: 500px;
@@ -112,4 +105,71 @@ export const resultBox = css`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     
+    `;
+export const antButton = css`
+    
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+    border: 1px dashed #D9D9D9;
+    `;
+
+export const playButton = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  & > span {
+    &:first-of-type {
+      font-size: 40px;
+      color: #52C41A;
+    }
+    &:last-of-type {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+   `;
+export const downloadButton = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  & > span {
+    &:first-of-type {
+      font-size: 30px;
+      color: #1890FF;
+    }
+    &:last-of-type {
+      font-size: 10px;
+      font-weight: 600;
+    }
+  }
+   `;
+
+export const mapBox = css`
+    position: relative;
+    width: 1797px;
+    height: 500px;
+    background: white;
+    margin-top: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 1rem;
+    `;
+export const mapSelectBox = css`
+    align-items: center;
+    display: flex;
+    max-width: 650px;
+    justify-content: space-between;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 1rem;
+    `;
+
+export const accordionBox = css`
+    font-size: 18px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     `;

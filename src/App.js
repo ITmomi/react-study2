@@ -1,7 +1,7 @@
 import React from "react";
 //import ToDoList from "./TodoList";
 import './App.css';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.css';
 //import CpVs from "./CpVs";
 //import './CpVs.css';
 //import Top from "./Component/Top";
@@ -10,11 +10,6 @@ import 'antd/dist/antd.css';
 import Main from "./Analysis/Main";
 // import CodingApple from "./CodingApple/CodingApple";
 // import './CodingApple/CodingApple.css';
-
-
-
-//      <Main />
-//      <SelectSource />
 
 function App() {
   return (

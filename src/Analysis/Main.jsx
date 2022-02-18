@@ -22,8 +22,8 @@ export default function Main () {
            <div css={SS.gridContainer}>
                <SelectSource />
                <SelectTarget />
-               {/*<DrawingType />*/}
            </div>
+               <DrawingType />
            </div>
        </div>
 
