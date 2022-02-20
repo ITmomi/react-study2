@@ -76,6 +76,7 @@ export const label = css`
     &::after {
       display: inline-block;
       content: ':';
+
 `;
 export const secondBoxSource = css`
     padding: 2rem;
@@ -111,6 +112,11 @@ export const antButton = css`
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     border-radius: 8px;
     border: 1px dashed #D9D9D9;
+    & > .blue {
+        background: #1890FF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+    }
     `;
 
 export const playButton = css`
@@ -172,4 +178,27 @@ export const mapSelectBox = css`
 export const accordionBox = css`
     font-size: 18px;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    `;
+
+export const mapSettingBox = css`
+    padding : 1rem;
+    margin-left: 300px;
+    margin-right: 300px;
+    backg
+    `;
+export const gridBox = css`
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    & > .offsetSpan {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+`;
+export const etcGridBox = css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #F0F2F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    grid-gap: 30px;
     `;
