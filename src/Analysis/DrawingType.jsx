@@ -8,7 +8,7 @@ import {
 	AlignLeftOutlined, UploadOutlined,
 } from "@ant-design/icons";
 import {Button, Collapse, Switch, Input, Select, Radio, Upload, InputNumber} from 'antd';
-import {etcGridBox, gridBox, mapSettingBox, offsetbox} from "./styleSheet";
+import {etcGridBox, gridBox, label, mapSettingBox, offsetbox, tableStyle} from "./styleSheet";
 
 
 export const DrawingType = () => {
@@ -46,11 +46,11 @@ export const DrawingType = () => {
 						<Collapse.Panel header="offset X/Y" key="1">
 							<div css={SS.mapSettingBox}>
 								<div css={SS.gridBox}>
-									<div style={{display:"flex", justifyContent:"space-evenly"}}>
-										<Switch checkedChildren="Auto" unCheckedChildren="Manual" defaultChecked />
+									<div style={{display:"flex", justifyContent:"center", alignItems:"center", gap:"25px"}}>
+										<Switch css={SS.offsetSwitchStyle} checkedChildren="Auto" unCheckedChildren="Manual" defaultChecked />
 										<Button css = {SS.antButton}>Reset</Button>
 										</div>
-									<div style={{display:"flex", justifyContent:"space-evenly", fontSize:"20px"}}>
+									<div style={{display:"flex", justifyContent:"space-around", fontSize:"20px"}}>
 										<span>Offset X</span>
 										<span>Offset Y</span>
 									</div>
@@ -58,32 +58,32 @@ export const DrawingType = () => {
 
 								<div css={SS.gridBox}>
 									<span css={SS.label} className="offsetSpan">Shot1</span>
-									<div style={{display:"flex", justifyContent:"space-evenly"}}>
+									<div css={SS.offSetline}>
 										<Input placeholder="offsetX" />
 										<Input placeholder="offsetY" />
 									</div>
 									<span css={SS.label} className="offsetSpan">Shot2</span>
-									<div style={{display:"flex", justifyContent:"space-evenly"}}>
+									<div css={SS.offSetline}>
 										<Input placeholder="offsetX" />
 										<Input placeholder="offsetY" />
 									</div>
 									<span css={SS.label} className="offsetSpan">Shot3</span>
-									<div style={{display:"flex", justifyContent:"space-evenly"}}>
+									<div css={SS.offSetline}>
 										<Input placeholder="offsetX" />
 										<Input placeholder="offsetY" />
 									</div>
 									<span css={SS.label} className="offsetSpan">Shot4</span>
-									<div style={{display:"flex", justifyContent:"space-evenly"}}>
+									<div css={SS.offSetline}>
 										<Input placeholder="offsetX" />
 										<Input placeholder="offsetY" />
 									</div>
 									<span css={SS.label} className="offsetSpan">Shot5</span>
-									<div style={{display:"flex", justifyContent:"space-evenly"}}>
+									<div css={SS.offSetline}>
 										<Input placeholder="offsetX" />
 										<Input placeholder="offsetY" />
 									</div>
 									<span css={SS.label} className="offsetSpan">Shot6</span>
-									<div style={{display:"flex", justifyContent:"space-evenly"}}>
+									<div css={SS.offSetline}>
 										<Input placeholder="offsetX" />
 										<Input placeholder="offsetY" />
 									</div>
@@ -93,8 +93,11 @@ export const DrawingType = () => {
 						</Collapse.Panel>
 						<Collapse.Panel header="CP/VS" key="2">
 							<div css={SS.mapSettingBox}>
-								<div style={{display:"flex", justifyContent:"space-evenly"}}>
+								<div css={SS.cpVsGridBox}>
+									<div>
 									<span css={SS.label}>Preset</span>
+									</div>
+									<div style={{display:"flex", gap:"20px"}}>
 									<Select
 										value={'1'}
 										style={{ width: 300 }}
@@ -105,24 +108,121 @@ export const DrawingType = () => {
 									</Select>
 									<Input placeholder="Enter Preset name" />
 									<Button css={SS.antButton} className="blue">Save Preset</Button>
+									</div>
 								</div>
-								<div>
-									<span css={SS.label}>CP/VS</span>
+								<div css={SS.cpVsGridBox}>
+									<div>
+										<span css={SS.label}>CP/VS</span>
+									</div>
+									<div style={{display:"flex", justifyContent:"space-between"}}>
 									<Radio value={1}>From Log Data</Radio>
 									<Radio value={2}>Set CP/VS for  each Shot</Radio>
 									<Radio value={3}>Reflect the CP/VS of Shot1  on all Shots</Radio>
+									</div>
 								</div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
-								<div></div>
 								<div>
+								<table css={ tableStyle }>
+									<thead>
+									<tr>
+										<th>SHOT</th>
+										<th>CP1</th>
+										<th>CP2</th>
+										<th>CP3</th>
+										<th>VS1</th>
+										<th>VS2</th>
+										<th>VS3</th>
+										<th>Display</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td><span css={label}>SHOT1</span></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td>
+											<Select
+												value={'1'}
+												style={{ width: 300 }}
+												// onChange={handleChange}
+											>
+												<Select.Option value="1">Fab1599</Select.Option>
+												<Select.Option value="2">Fab1600</Select.Option>
+												<Select.Option value="3">Fab1601</Select.Option>
+											</Select>
+										</td>
+									</tr>
+									<tr>
+										<td><span css={label}>SHOT2</span></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td>
+											<Select
+												value={'1'}
+												style={{ width: 300 }}
+												// onChange={handleChange}
+											>
+												<Select.Option value="1">Fab1599</Select.Option>
+												<Select.Option value="2">Fab1600</Select.Option>
+												<Select.Option value="3">Fab1601</Select.Option>
+											</Select>
+										</td>
+									</tr>
+									<tr>
+										<td><span css={label}>SHOT3</span></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td>
+											<Select
+												value={'1'}
+												style={{ width: 300 }}
+												// onChange={handleChange}
+											>
+												<Select.Option value="1">Fab1599</Select.Option>
+												<Select.Option value="2">Fab1600</Select.Option>
+												<Select.Option value="3">Fab1601</Select.Option>
+											</Select>
+										</td>
+									</tr>
+									<tr>
+										<td><span css={label}>SHOT4</span></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td><input/></td>
+										<td>
+											<Select
+												value={'1'}
+												style={{ width: 300 }}
+												// onChange={handleChange}
+											>
+												<Select.Option value="1">Fab1599</Select.Option>
+												<Select.Option value="2">Fab1600</Select.Option>
+												<Select.Option value="3">Fab1601</Select.Option>
+											</Select>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+								</div>
+								<div css={SS.cpVsGridBox}>
 									<span css={SS.label}>Job Data File</span>
 									<Upload>
 										<Button icon={<UploadOutlined />}>Upload</Button>
 									</Upload>
-
 								</div>
 							</div>
 

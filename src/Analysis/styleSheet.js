@@ -118,6 +118,16 @@ export const antButton = css`
         border-radius: 8px;
     }
     `;
+export const offsetSwitchStyle = css`
+    height: 30px;
+    width: 80px;
+    & > div {
+        top: 6px;
+    }
+    & > span {
+    font-size: 14px;
+    }
+`;
 
 export const playButton = css`
   display: flex;
@@ -182,9 +192,8 @@ export const accordionBox = css`
 
 export const mapSettingBox = css`
     padding : 1rem;
-    margin-left: 300px;
-    margin-right: 300px;
-    backg
+    width: 70%;
+    margin: 0 auto;
     `;
 export const gridBox = css`
     display: grid;
@@ -201,4 +210,29 @@ export const etcGridBox = css`
     background: #F0F2F5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     grid-gap: 30px;
+    `;
+
+export const offSetline = css`
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    gap: 10px;
+    `;
+
+export const cpVsGridBox = css`
+    display: grid;
+    grid-template-columns: 0.5fr 3fr;
+    `;
+
+export const tableStyle = css`
+    table-layout: fixed;
+    text-align: center;
+    margin: 0 auto;
+    & input {
+        width: 100px;
+    }
+    & > thead {
+        background: #F0F0F0;
+    }
+
     `;
