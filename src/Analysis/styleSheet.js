@@ -66,6 +66,7 @@ export const gridContainer = css`
     `;
 
 export const label = css`
+    white-space: pre;
     &::before {
       display: inline-block;
       color: red;
@@ -204,13 +205,6 @@ export const gridBox = css`
       justify-content: center;
     }
 `;
-export const etcGridBox = css`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: #F0F2F5;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    grid-gap: 30px;
-    `;
 
 export const offSetline = css`
     display: flex;
@@ -222,6 +216,7 @@ export const offSetline = css`
 export const cpVsGridBox = css`
     display: grid;
     grid-template-columns: 0.5fr 3fr;
+    padding: 1rem;
     `;
 
 export const tableStyle = css`
@@ -233,6 +228,35 @@ export const tableStyle = css`
     }
     & > thead {
         background: #F0F0F0;
+        }
     }
-
+    & input {
+        background: #F5F5F5;
+        border: 1px solid #D9D9D9;
+        box-sizing: border-box;
+        border-radius: 2px;
+    }
     `;
+
+export const etcGridBox = css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    grid-gap: 30px;
+    `;
+
+export const etcEditBox = css`
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 1rem;
+    align-items: center;
+    height: 200px;
+    background: #F0F2F5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    & span {
+        display: flex;
+        align-items: center;
+        white-space: pre;
+    }
+    `;
+

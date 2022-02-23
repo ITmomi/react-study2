@@ -8,7 +8,7 @@ import {
 	AlignLeftOutlined, UploadOutlined,
 } from "@ant-design/icons";
 import {Button, Collapse, Switch, Input, Select, Radio, Upload, InputNumber} from 'antd';
-import {etcGridBox, gridBox, label, mapSettingBox, offsetbox, tableStyle} from "./styleSheet";
+import {etcEditBox, etcGridBox, gridBox, label, mapSettingBox, offsetbox, tableStyle} from "./styleSheet";
 
 
 export const DrawingType = () => {
@@ -149,9 +149,11 @@ export const DrawingType = () => {
 												style={{ width: 300 }}
 												// onChange={handleChange}
 											>
-												<Select.Option value="1">Fab1599</Select.Option>
-												<Select.Option value="2">Fab1600</Select.Option>
-												<Select.Option value="3">Fab1601</Select.Option>
+												<Select.Option value="1">P1&P2&P3</Select.Option>
+												<Select.Option value="2">P1&P2</Select.Option>
+												<Select.Option value="3">P2&P3</Select.Option>
+												<Select.Option value="4">P2Only</Select.Option>
+												<Select.Option value="5">None</Select.Option>
 											</Select>
 										</td>
 									</tr>
@@ -169,9 +171,11 @@ export const DrawingType = () => {
 												style={{ width: 300 }}
 												// onChange={handleChange}
 											>
-												<Select.Option value="1">Fab1599</Select.Option>
-												<Select.Option value="2">Fab1600</Select.Option>
-												<Select.Option value="3">Fab1601</Select.Option>
+												<Select.Option value="1">P1&P2&P3</Select.Option>
+												<Select.Option value="2">P1&P2</Select.Option>
+												<Select.Option value="3">P2&P3</Select.Option>
+												<Select.Option value="4">P2Only</Select.Option>
+												<Select.Option value="5">None</Select.Option>
 											</Select>
 										</td>
 									</tr>
@@ -189,9 +193,11 @@ export const DrawingType = () => {
 												style={{ width: 300 }}
 												// onChange={handleChange}
 											>
-												<Select.Option value="1">Fab1599</Select.Option>
-												<Select.Option value="2">Fab1600</Select.Option>
-												<Select.Option value="3">Fab1601</Select.Option>
+												<Select.Option value="1">P1&P2&P3</Select.Option>
+												<Select.Option value="2">P1&P2</Select.Option>
+												<Select.Option value="3">P2&P3</Select.Option>
+												<Select.Option value="4">P2Only</Select.Option>
+												<Select.Option value="5">None</Select.Option>
 											</Select>
 										</td>
 									</tr>
@@ -209,9 +215,11 @@ export const DrawingType = () => {
 												style={{ width: 300 }}
 												// onChange={handleChange}
 											>
-												<Select.Option value="1">Fab1599</Select.Option>
-												<Select.Option value="2">Fab1600</Select.Option>
-												<Select.Option value="3">Fab1601</Select.Option>
+												<Select.Option value="1">P1&P2&P3</Select.Option>
+												<Select.Option value="2">P1&P2</Select.Option>
+												<Select.Option value="3">P2&P3</Select.Option>
+												<Select.Option value="4">P2Only</Select.Option>
+												<Select.Option value="5">None</Select.Option>
 											</Select>
 										</td>
 									</tr>
@@ -230,46 +238,51 @@ export const DrawingType = () => {
 						<Collapse.Panel header="ETC." key="3">
 							<div css={SS.mapSettingBox}>
 								<div css={SS.etcGridBox}>
-									<div>
+									<div css = {SS.etcEditBox}>
 										<div>
 											<span css={SS.label}>Display Map</span>
+										</div>
+										<div style={{display:"flex", justifyContent:"space-between"}}>
 											<InputNumber min={1} max={10} defaultValue={3}  />
 											<span>~</span>
 											<InputNumber min={1} max={10} defaultValue={3}  />
 										</div>
 										<div>
 											<span css={SS.label}>Number of Columns to Display</span>
+										</div>
+										<div style={{display:"flex", flexDirection:"row-reverse"}}>
 											<InputNumber min={1} max={10} defaultValue={3}  />
 										</div>
 										<div>
 											<span css={SS.label}>Show Extra Info</span>
+										</div>
+										<div style={{display:"flex", flexDirection:"row-reverse"}}>
 											<Switch defaultChecked />
 										</div>
 									</div>
-									<div>
+									<div css = {SS.etcEditBox}>
 										<div>
 											<span css={SS.label}>Div</span>
-											<div>
+										</div>
+										<div style={{display:"flex", justifyContent:"space-between", gap:"10px"}}>
 												<span>Upper Row</span>
 												<Input placeholder="1.0" />
-											</div>
-											<div>
 												<span>Lower Row</span>
 												<Input placeholder="1.0" />
-											</div>
 										</div>
 										<div>
 											<span css={SS.label}>Plate Size</span>
-											<div>
+										</div>
+										<div style={{display:"flex", justifyContent:"space-between", gap:"10px"}}>
 												<span>Size_X</span>
 												<Input placeholder="2500" />
-											</div>
-											<div>
 												<span>Size_Y</span>
 												<Input placeholder="2500" />
-											</div>
 										</div>
+										<div></div>
+										<div style={{display:"flex", flexDirection:"row-reverse"}}>
 										<Button css={SS.antButton} className="blue">Save</Button>
+										</div>
 									</div>
 								</div>
 							</div>
