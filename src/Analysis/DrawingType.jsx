@@ -161,4 +161,5 @@ export const DrawingType = () => {
 			</div>
 		</>
 	);
+
 };
