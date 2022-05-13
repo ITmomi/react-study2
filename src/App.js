@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 //import ToDoList from "./TodoList";
 import './App.css';
 import 'antd/dist/antd.css';
@@ -7,7 +7,7 @@ import 'antd/dist/antd.css';
 //import Top from "./Component/Top";
 //import Body from "./Component/Body";
 //import State from "./Component/State";
-import Main from "./Analysis/Main";
+import Main from "./Liplus/Main";
 // import CodingApple from "./CodingApple/CodingApple";
 // import './CodingApple/CodingApple.css';
 

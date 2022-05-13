@@ -1,119 +1,89 @@
-import * as SS from "./styleSheet";
-import React from "react";
-import {Select, DatePicker, TreeSelect} from 'antd';
-import {lotidData, diffData} from "./data"
-import {PlayCircleOutlined} from '@ant-design/icons';
+import React, {useReducer, useState} from "react";
+import Button from "antd/es/button";
+import Input from "antd/es/input";
+
+function reducer(state, action) {
+    switch (action.type) {
+        case "Plus" :
+            return { value : state.value + 1};
+        case "minus" :
+            return { value : state.value - 1};
+        default:
+            return state;
+    }
+}
+
+function reducerName(nameState, nameAction) {
+    return {
+        ...nameState,
+        [nameAction.name]: nameAction.value
+    }
+}
+
 export const SelectTarget = () => {
-	return (
+    const [state, dispatch] = useReducer(reducer, {value: 0});
+    const [value, SetValue] = useState(0);
+    const [nameState, nameDispatch] = useReducer(reducerName,{
+        name: "",
+        nickname: "",
+    })
+    const {name, nickname} = nameState
+    const onChange = (e) => {
+        nameDispatch(e.target)
+    }
+    console.log("Gray", nameState);
+    return (
 		<>
         <div className={"gridTarget"}>
-            <div style={{position:"relative"}}>
-                <span>Select Target</span>
-                <div css={SS.secondBoxTarget}>
-                    <div>
-                        <span css={SS.label} >Fab</span>
-                        <Select
-                            value={'1'}
-                            style={{ width: 300 }}
-                            // onChange={handleChange}
-                        >
-                            <Select.Option value="1">Fab1600</Select.Option>
-                            <Select.Option value="2">Fab1700</Select.Option>
-                        </Select>
-                    </div>
-                    <div>
-                        <span css={SS.label} >EquipMent</span>
-                        <Select
-                            value={'1'}
-                            style={{ width: 300 }}
-                            // onChange={handleChange}
-                        >
-                            <Select.Option value="1">Tool1600_1</Select.Option>
-                            <Select.Option value="2">Tool1600_2</Select.Option>
-                            <Select.Option value="3">Tool1600_3</Select.Option>
-                        </Select>
-                    </div>
-                    <div>
-                        <span css={SS.label} >period</span>
-                        <DatePicker.RangePicker
-                            style={{ width: '300px' }}
-                            inputReadOnly
-                            allowClear={false}
-                        />
-                    </div>
-                    <div>
-                        <span css={SS.label} >job</span>
-                        <Select
-                            value={'1'}
-                            style={{ width: 300 }}
-                            // onChange={handleChange}
-                        >
-                            <Select.Option value="1">Fab1599</Select.Option>
-                            <Select.Option value="2">Fab1600</Select.Option>
-                            <Select.Option value="3">Fab1601</Select.Option>
-                        </Select>
-                    </div>
-                    <div>
-                        <span css={SS.label} >Lot ID</span>
-                        <TreeSelect
-                            treeData={lotidData}
-                            showCheckedStrategy={TreeSelect.SHOW_CHILD}
-                            style={{ width: '300px' }}
-                            maxTagCount="responsive"
-                            treeCheckable
-                            treeDefaultExpandAll
-                        />
-                    </div>
-                    <div>
-                        <span css={SS.label} >Mean Deviation Diff</span>
-                        <TreeSelect
-                            treeData={diffData}
-                            showCheckedStrategy={TreeSelect.SHOW_CHILD}
-                            style={{ width: '300px' }}
-                            maxTagCount="responsive"
-                            treeCheckable
-                            treeDefaultExpandAll
-                        />
-                    </div>
-                    <div>
-                        <span css={SS.label} >AE Correction</span>
-                        <Select
-                            value={'1'}
-                            style={{ width: 300 }}
-                            // onChange={handleChange}
-                        >
-                            <Select.Option value="1">OFF</Select.Option>
-                            <Select.Option value="2">Shift/RotCorrection</Select.Option>
-                            <Select.Option value="3">Shift/RotCorrection/MagCorrection</Select.Option>
-                        </Select>
-                    </div>
-                    <div>
-                        <span css={SS.label} >Stage Correction</span>
-                        <TreeSelect
-                            treeData={diffData}
-                            showCheckedStrategy={TreeSelect.SHOW_CHILD}
-                            style={{ width: '300px' }}
-                            maxTagCount="responsive"
-                            treeCheckable
-                            treeDefaultExpandAll
-                        />
-                    </div>
-                    <div>
-                        <span css={SS.label} >ADC Correction</span>
-                        <TreeSelect
-                            treeData={diffData}
-                            showCheckedStrategy={TreeSelect.SHOW_CHILD}
-                            style={{ width: '300px' }}
-                            maxTagCount="responsive"
-                            treeCheckable
-                            treeDefaultExpandAll
-                        />
-                    </div>
-                    <div css ={SS.playButton}style={{position:"absolute", right:"100px", bottom:"0"}}>
-                        <PlayCircleOutlined />
-                        <span>Start</span>
-                    </div>
-                </div>
+            <div>
+                <span> Reducer 현재 값은 {state.value} 입니다.</span>
+                <Button type="primary" danger
+                        onClick={() => dispatch({
+                        type: "Plus"
+                        })}
+                >
+                    + 1
+                </Button>
+                <Button type="primary" danger
+                        onClick={() => dispatch({
+                        type: "minus"
+                        })}
+                >
+                    - 1
+                </Button>
+            </div>
+            <div>
+                <span> UseState 현재 값은 {value} 입니다.</span>
+                <Button type="primary" danger
+                        onClick={() => {
+                            SetValue(value + 1);
+                        }}
+                >
+                    + 1
+                </Button>
+                <Button type="primary" danger
+                        onClick={() => {
+                            SetValue(value - 1);
+                        }}
+            >
+                + 1
+            </Button>
+            </div>
+            <div>
+                <Input placeholder="Name을 입력 하세요."
+                       name="name"
+                       value={name}
+                       onChange={onChange}/>
+                <Input placeholder="nickName을 입력 하세요."
+                       name="nickname"
+                       value={nickname}
+                       onChange={onChange}/>
+               <div>
+                 <b>이름:</b>{name}
+               </div>
+               <div>
+                 <b>닉네임:</b>{nickname}
+               </div>
             </div>
         </div>
 		</>

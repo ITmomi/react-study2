@@ -1,12 +1,27 @@
-import * as SS from "./styleSheet";
-import React, { useState } from 'react';
+import * as SS from "../Liplus/styleSheet";
+import React, {useEffect, useState} from 'react';
 import { Select, Upload, Button } from 'antd';
 import { InboxOutlined } from '@ant-design/icons';
+import Input from "antd/es/input";
 
 const { Option } = Select;
 
 export const SelectSource = () => {
     const [source, setSource] = useState ("Local");
+    const [value,setValue] = useState(0);
+    const [name, setName] = useState("");
+    const onchange = (e) => {
+        setName(e.target.value);
+    }
+
+    useEffect(()=> {
+        console.log ("It is wrote before rendering with new state");
+        console.log(name);
+        return () => {
+            console.log("It is wrote before update with prev state")
+            console.log(name)
+        };
+    }, [name]);
 
     return (
         <div className="gridSource">
@@ -52,6 +67,24 @@ export const SelectSource = () => {
                     {source === 'Local' ? (
                         <div style={{position:"relative",float:"right", top:"120px"}}>
                         <Button css = {SS.antButton}>Load Start</Button>
+                            <div>
+                        <p>버튼 누른 값은 {value} 입니다.</p>
+                        <Button css = {SS.antButton}
+                            onClick={()=> {
+                                setValue(value + 1)
+                            }}
+                        > + 1 </Button>
+                        <Button css = {SS.antButton}
+                            onClick={()=> {
+                                setValue(value - 1)
+                            }}
+                        > - 1 </Button>
+                            </div>
+                            <div>
+                                <Input placeholder="이름을 입력 하세요."
+                                    value={name} onChange={onchange}/>
+                                    이름 : {name}
+                            </div>
                         </div>
                     ) : (
                     ''
