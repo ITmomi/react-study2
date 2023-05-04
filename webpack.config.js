@@ -57,7 +57,7 @@ module.exports = (env, arg) => {
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader', 'eslint-loader'],
+          use: ['babel-loader'],
         },
         {
           test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
@@ -92,10 +92,11 @@ module.exports = (env, arg) => {
       ],
     },
     devServer: {
+      historyApiFallback: true,
       contentBase: BUILD_PATH,
       inline: true,
       hot: true,
-      port: 3000,
+      port: 5000,
     },
     plugins: [
       /*
